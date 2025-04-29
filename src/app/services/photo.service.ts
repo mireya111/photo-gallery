@@ -37,6 +37,7 @@ public photos:UserPhoto[]=[];
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+        nameArchive: fileName
       };
     }
     else {
@@ -44,7 +45,8 @@ public photos:UserPhoto[]=[];
       // already loaded into memory
       return {
         filepath: fileName,
-        webviewPath: photo.webPath
+        webviewPath: photo.webPath,
+        nameArchive: fileName
       };
     }
   }
@@ -116,5 +118,6 @@ public photos:UserPhoto[]=[];
 
 export interface UserPhoto{
   filepath:string;
-  webviewPath?:string
+  webviewPath?:string; 
+  nameArchive?:string
 }
